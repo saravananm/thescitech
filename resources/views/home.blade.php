@@ -60,6 +60,7 @@
             </div>
             <div class="bottom-line pt-1"></div>
             @endforeach
+            <a href="{{url('news-and-features')}}" class="read-more">Click Here To Read More</a>
         </div>
     </div>
     <!---- Left Side ------->

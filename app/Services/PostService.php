@@ -166,15 +166,15 @@ class PostService
 	public function getPostsByFilters($division, $categories)
 	{
 		if(empty($categories))
-			return Post::with(['tags'])->join('post_categories', 'posts.id', '=', 'post_categories.post_id')->join('categories', 'post_categories.categorie_id', '=', 'categories.id')->where('division',"$division")->select('posts.id','posts.image_name','posts.title','posts.datefor','posts.author','posts.short_message')->groupBy('posts.id')->orderBy('datefor','desc')->orderBy('posts.id','desc')->paginate($this->configvalues['discoveries_innovations_applications_impacts_science_society_page_post_limit']);
+			return Post::with(['tags'])->join('post_categories', 'posts.id', '=', 'post_categories.post_id')->join('categories', 'post_categories.categorie_id', '=', 'categories.id')->where('division',"$division")->select('posts.id','posts.image_name','posts.title','posts.datefor','posts.slug','posts.author','posts.short_message')->groupBy('posts.id')->orderBy('datefor','desc')->orderBy('posts.id','desc')->paginate($this->configvalues['discoveries_innovations_applications_impacts_science_society_page_post_limit']);
 		else
-			return Post::join('post_categories', 'posts.id', '=', 'post_categories.post_id')->with(['tags'])->join('categories', 'post_categories.categorie_id', '=', 'categories.id')->where('division',$division)->whereIn('categorie_id',$categories)->select('posts.id','posts.image_name','posts.title','posts.datefor','posts.author','posts.short_message')->orderBy('datefor','desc')->orderBy('posts.id','desc')->paginate($this->configvalues['discoveries_innovations_applications_impacts_science_society_page_post_limit']);
+			return Post::join('post_categories', 'posts.id', '=', 'post_categories.post_id')->with(['tags'])->join('categories', 'post_categories.categorie_id', '=', 'categories.id')->where('division',$division)->whereIn('categorie_id',$categories)->select('posts.id','posts.image_name','posts.slug','posts.title','posts.datefor','posts.author','posts.short_message')->orderBy('datefor','desc')->orderBy('posts.id','desc')->paginate($this->configvalues['discoveries_innovations_applications_impacts_science_society_page_post_limit']);
 	}
 
 	
 
 	public function getNewsAndFeaturePosts()
 	{ 
-		return  Post::with(['tags'])->join('post_categories', 'posts.id', '=', 'post_categories.post_id')->join('categories', 'post_categories.categorie_id', '=', 'categories.id')->groupBy('posts.id')->select('posts.id','posts.image_name','posts.title','posts.datefor','posts.author','posts.short_message')->orderBy('datefor','desc')->orderBy('posts.id','desc')->paginate($this->configvalues['news_and_feature_page_post_limit']);
+		return  Post::with(['tags'])->join('post_categories', 'posts.id', '=', 'post_categories.post_id')->join('categories', 'post_categories.categorie_id', '=', 'categories.id')->groupBy('posts.id')->select('posts.id','posts.slug','posts.image_name','posts.title','posts.datefor','posts.author','posts.short_message')->orderBy('datefor','desc')->orderBy('posts.id','desc')->paginate($this->configvalues['news_and_feature_page_post_limit']);
 	}
 }

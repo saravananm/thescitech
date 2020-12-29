@@ -1,7 +1,7 @@
 
 @extends('layout.layout')
 
-@section('title', 'Home Page')
+@section('title', 'The Scitech | Science and technology news and features')
 
 @section('content')
 
@@ -13,7 +13,7 @@
                 <div class="graybox img-hover" style="position:relative">
                     <img src="{{url('public/storage/images/posts/'.$postcoverimage->image_name) }}" class="image-fit">    
                     <div class="featured-image-wrapper pt-2">
-                         <h3 class="featured-image-title"><a href="">{{$postcoverimage->title}}</a></h3>
+                         <h3 class="featured-image-title"><a href="{{url('post/'.$postcoverimage->slug)}}">{{$postcoverimage->title}}</a></h3>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                     <div class="list-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{date('F j, Y', strtotime($post->datefor))}}</div>
                     <div class="list-author"> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{$post->author}}</div>
                     <div class="clearfix"></div>
-                    <p>{!! $post->short_message !!}</p>
+                    <p><a href="{{url('post/'.$post->slug)}}">{!! $post->short_message !!}</a></p>
                 </div>
                 @else
                 
@@ -54,7 +54,7 @@
                     <div class="list-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{date('F j, Y', strtotime($post->datefor))}}</div>
                     <div class="list-author"> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{$post->author}}</div>
                     <div class="clearfix"></div>
-                    <p>{!! $post->short_message !!}</p>
+                    <p><a href="{{url('post/'.$post->slug)}}">{!! $post->short_message !!}</a></p>
                 </div>
                 @endif
             </div>

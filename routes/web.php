@@ -81,4 +81,9 @@ Route::group(['middleware' =>['customAuth']], function(){
 	//Config
 	Route::get('configs','ConfigController@view');
 	Route::post('configs','ConfigController@add');
+
+	// other Image/videos
+	Route::get('extraimages','ExtraImageController@view');
+	Route::post('extraimages','ExtraImageController@add');
+	Route::get('extraimages/{id}','ExtraImageController@edit');
 });

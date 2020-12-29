@@ -1,7 +1,7 @@
 
 @extends('layout.layout')
 
-@section('title', 'News & Features Page')
+@section('title', 'News and features | The Scitech')
 
 @section('content')
 

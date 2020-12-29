@@ -24,6 +24,7 @@
         <li ><a  href="{{url('thescitechjournalposts')}}">The ScitechJournal Post Module</a></li>
         <li ><a  href="{{url('highlights')}}">Highlight Module</a></li>
         <li ><a  href="{{url('about_subscribe_advertise_contact')}}">About Subscribe Advertise Contact Module</a></li>
+        <li ><a  href="{{url('extraimages')}}">Extra Images/Videos</a></li>
         <li ><a  href="{{url('configs')}}">Config Settings</a></li>
       </ul>
     </div>

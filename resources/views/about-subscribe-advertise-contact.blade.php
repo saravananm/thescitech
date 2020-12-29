@@ -1,7 +1,7 @@
 
 @extends('layout.layout')
 
-@section('title', 'Home Page')
+@section('title', $title)
 
 @section('content')
 

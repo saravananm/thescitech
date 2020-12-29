@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>@yield('title') - page</title>
+        <title>@yield('title')</title>
         <meta charset="utf-8">
-		<link rel="icon" href="{{ asset('/public/images/sticon.png') }}" type="image/png">
+		<link rel="icon" href="{{ asset('/public/image/sticon.png') }}" type="image/png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ asset('/public/css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('/public/css/bootstrap/4.5.0/css/bootstrap.min.css') }}">
@@ -57,7 +57,7 @@
                   <a href="{{url('advertise')}}">Advertise</a>
                   <a href="{{url('contact')}}">Contact</a>
                 </div>
-                <h4>Footer Message</h4>
+                <h4></h4>
             </footer>
         </div>
         <script src="{{ asset('/public/css/bootstrap/4.5.0/js/bootstrap.min.js') }}"></script>

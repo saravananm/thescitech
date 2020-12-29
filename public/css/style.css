@@ -323,7 +323,7 @@ color: #FFF;
     margin-top:15px;
 }
 .list-news h4{
-    font-size: 18px;
+    font-size: 20px;
     font-weight:bold;
     margin:0px;
 }
@@ -345,11 +345,12 @@ color: #FFF;
 		margin-top:15px;
 	}
 }
-.list-news p{
+.list-news p a{
     font-size: 16px;
     margin-top: 15px;
     text-align: justify;
 	color:#000;
+  text-decoration: none;
 }
 .list-date{
     color:#B5B5B5;

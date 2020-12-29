@@ -78,8 +78,26 @@ class FrontEndController extends Controller
         $about_subscribe_advertise_contact          = $this->about_subscribe_advertise_contact->getContent();
         $content                                    = $about_subscribe_advertise_contact->$page;
 
+        switch($page)
+        {
+            case 'about':
+            $title = 'About The Scitech | The Scitech';
+            break;
 
-        return View('about-subscribe-advertise-contact',['data'=> $content, 'advertisementdetails_top' => $advertisementdetails_top, 'sidepaneltabpostdetails' => $sidepaneltabpostdetails, 'sidepaneltabthescitechpostdetails' => $sidepaneltabthescitechpostdetails, 'advertisementdetails_bottom' => $advertisementdetails_bottom, 'advertisementdetails_banner' => $advertisementdetails_banner]);
+            case 'subscribe';
+            $title = 'The Scitech journal Subscription details | The Scitech';
+            break;
+
+            case 'advertise';
+            $title = 'Advertise in  The Scitech website and The Scitech Journal';
+            break;
+
+            case 'contact';
+            $title = 'Contact The Scitech';
+            break;
+        }
+
+        return View('about-subscribe-advertise-contact',['data'=> $content, 'title'=> $title, 'advertisementdetails_top' => $advertisementdetails_top, 'sidepaneltabpostdetails' => $sidepaneltabpostdetails, 'sidepaneltabthescitechpostdetails' => $sidepaneltabthescitechpostdetails, 'advertisementdetails_bottom' => $advertisementdetails_bottom, 'advertisementdetails_banner' => $advertisementdetails_banner]);
     }
 
     public function newsandfeaturespage()
@@ -114,7 +132,7 @@ class FrontEndController extends Controller
         $this->categoryservice      = new CategoryService();
         $categories      = $this->categoryservice->getCategoriesByDivision('discoveries-innovations');
         
-        $title          = 'Discoveries & Innovations';
+        $title          = 'Discoveries and innovations news | The Scitech';
         return View('discoveries-innovations-applications-impacts-science-society',['data' => $post, 'coverimage' => $coverimage, 'title' => $title, 'categories' => $categories, 'selectedcategories' => $selectedcategories, 'advertisementdetails_top' => $advertisementdetails_top, 'sidepaneltabpostdetails' => $sidepaneltabpostdetails, 'sidepaneltabthescitechpostdetails' => $sidepaneltabthescitechpostdetails, 'advertisementdetails_bottom' => $advertisementdetails_bottom, 'advertisementdetails_banner' => $advertisementdetails_banner, 'postcoverimage' => $postcoverimage]);
     }
 
@@ -139,7 +157,7 @@ class FrontEndController extends Controller
         $this->categoryservice      = new CategoryService();
         $categories      = $this->categoryservice->getCategoriesByDivision('applications-impacts');
         
-        $title          = 'Applications & Impacts';
+        $title          = 'Applications and impacts news | The Scitech';
         return View('discoveries-innovations-applications-impacts-science-society',['data' => $post, 'coverimage' => $coverimage, 'title' => $title, 'categories' => $categories, 'selectedcategories' => $selectedcategories, 'advertisementdetails_top' => $advertisementdetails_top, 'sidepaneltabpostdetails' => $sidepaneltabpostdetails, 'sidepaneltabthescitechpostdetails' => $sidepaneltabthescitechpostdetails, 'advertisementdetails_bottom' => $advertisementdetails_bottom, 'advertisementdetails_banner' => $advertisementdetails_banner, 'postcoverimage' => $postcoverimage]);
     }
 
@@ -164,7 +182,7 @@ class FrontEndController extends Controller
         $this->categoryservice      = new CategoryService();
         $categories      = $this->categoryservice->getCategoriesByDivision('science-society');
         
-        $title          = 'Science & Society';
+        $title          = 'Science and Society news | The Scitech';
         return View('discoveries-innovations-applications-impacts-science-society',['data' => $post, 'coverimage' => $coverimage, 'title' => $title, 'categories' => $categories, 'selectedcategories' => $selectedcategories, 'advertisementdetails_top' => $advertisementdetails_top, 'sidepaneltabpostdetails' => $sidepaneltabpostdetails, 'sidepaneltabthescitechpostdetails' => $sidepaneltabthescitechpostdetails, 'advertisementdetails_bottom' => $advertisementdetails_bottom, 'advertisementdetails_banner' => $advertisementdetails_banner, 'postcoverimage' => $postcoverimage]);
     }
 

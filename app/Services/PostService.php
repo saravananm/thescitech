@@ -148,7 +148,7 @@ class PostService
 
 	public function getPostCoverImage()
 	{
-		return Post::select('id','title','image_name')->where('cover_image','1')->first();
+		return Post::select('id','title','image_name','slug')->where('cover_image','1')->first();
 	}
 
 	public function getSidePanelTab()

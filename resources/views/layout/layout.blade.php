@@ -57,7 +57,8 @@
                   <a href="{{url('advertise')}}">Advertise</a>
                   <a href="{{url('contact')}}">Contact</a>
                 </div>
-                <h4></h4>
+                <h4>Samanthi Publications Pvt. Ltd | Phone : +91-44- 28175694</h4>
+                <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
             </footer>
         </div>
         <script src="{{ asset('/public/css/bootstrap/4.5.0/js/bootstrap.min.js') }}"></script>

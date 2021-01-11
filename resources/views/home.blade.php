@@ -19,7 +19,9 @@
             </div>
              <div class="col-md-4  pl-0 pr-0 pb-1" >
                 <div class="graybox img-hover">
-                    <img src="{{url('public/storage/images/coverimage/'.$coverimage->image_name) }}"  class="image-fit">                         
+                    <a href="{{url('the-scitech-journal')}}">
+                    <img src="{{url('public/storage/images/coverimage/'.$coverimage->image_name) }}"  class="image-fit"> 
+                    </a>                        
                 </div>                               
             </div>
         </div>  

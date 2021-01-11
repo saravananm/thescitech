@@ -43,9 +43,7 @@ class ThescitechjournalpostService
 	{
 		return Validator::make($req->all(), [
 			'categories' 	=> 'required',
-			'coverimages_id'=> 'required',
             'title' 		=> 'required',
-    		'short_message' => 'required',
     		'message' 		=> 'required',
     		'datefor' 		=> 'required',
 			'author' 		=> 'required',
@@ -58,9 +56,7 @@ class ThescitechjournalpostService
 	{
 		return Validator::make($req->all(), [
 			'categories' 	=> 'required',
-			'coverimages_id'=> 'required',
             'title' 		=> 'required',
-    		'short_message' => 'required',
     		'message' 		=> 'required',
     		'datefor' 		=> 'required',
 			'author' 		=> 'required',
@@ -81,9 +77,9 @@ class ThescitechjournalpostService
         $post->coverimages_id 	= $req->coverimages_id;
         $post->title 			= $req->title;
         $post->slug 			= $this->slugify($req->title);
-        $post->short_message 	= $req->short_message;
+        $post->short_message 	= ($req->short_message?$req->short_message:'');
 		$post->message 			= $req->message;
-		$post->image_content 	= $req->image_content;
+		$post->image_content 	= ($req->image_content?$req->image_content:'');
         $post->datefor 			= $req->datefor;
         $post->author 			= $req->author;
         $post->status 			= $req->status;
@@ -105,9 +101,9 @@ class ThescitechjournalpostService
         $post->coverimages_id 	= $req->coverimages_id;
         $post->title 			= $req->title;
         $post->slug 			= $this->slugify($req->title);
-        $post->short_message 	= $req->short_message;
+        $post->short_message 	= ($req->short_message?$req->short_message:'');
 		$post->message 			= $req->message;
-		$post->image_content 	= $req->image_content;
+		$post->image_content 	= ($req->image_content?$req->image_content:'');
         $post->datefor 			= $req->datefor;
         $post->author 			= $req->author;
         $post->status 			= $req->status;

@@ -17,8 +17,9 @@
         <div class="list-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>{{date('F j, Y', strtotime($post->datefor))}}</div>
         <div class="list-author"> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{$post->author}}</div>
         <div class="clearfix">&nbsp;</div>
-
+        @if($post->image_name != '')
         <img src="{{url('public/storage/images/posts/'.$post->image_name) }}" style="width: 100%" class=" mt-1">  
+        @endif
         <div class="image-content">    
         {!! $post->image_content !!}                  
         </div>                            

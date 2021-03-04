@@ -3,6 +3,10 @@
 
 @section('title', 'The Scitech | Science and technology news and features')
 
+@section('metakeyword', 'The SciTech  Journal, multidisciplinary, monthly  publication, technology, innovation, scientists, engineers, scientific,  current issue, News And Press Release List, archive')
+
+@section('metadescription', 'The Scitech Journal is a multi disciplinary monthly publication in print and digital format dedicated to science, technology and innovation and aims to promote communication and interaction among, scientists, engineers and public. The mission is to spread awareness about scientific and technological advancements and achievements by publishing the latest scientific discoveries and technological innovations')
+
 @section('content')
 
 <div class="row mt-2">

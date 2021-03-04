@@ -3,6 +3,10 @@
 
 @section('title', $post->title)
 
+@section('metakeyword', $post->metakeyword)
+
+@section('metadescription', $post->metadescription)
+
 @section('content')
 
 <div class="row mt-2">
@@ -19,7 +23,7 @@
         <div class="list-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>{{date('F j, Y', strtotime($post->datefor))}}</div>
         <div class="list-author"> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{$post->author}}</div>
         <div class="clearfix">&nbsp;</div>
-        @if($post->image_name !='')
+        @if(isset($post->image_name) && $post->image_name !='')
         <img src="{{url('public/storage/images/thescitechjournalposts/'.$post->image_name) }}" style="width: 100%" class=" mt-1"> 
         @endif
         <div class="image-content">    

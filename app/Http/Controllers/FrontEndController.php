@@ -203,7 +203,6 @@ class FrontEndController extends Controller
             $Latestcoverimage           = $this->coverimageservice->getLatestCoverImage();
             $my                         = $Latestcoverimage->month.'-'.$Latestcoverimage->year;
         }
-       
         $coverimage                     = $this->coverimageservice->getCoverImageByFilter($my);
         $thescitechjournalpost          = $this->thescitechjournalpostservice->getThescitechPosts($my);
         $my_array                       = explode("-",$my);
@@ -235,6 +234,7 @@ class FrontEndController extends Controller
         $advertisementdetails_bottom        = $this->advertisementservice->getAdvertisementsByPosition('sidepanel_bottom');
         $this->thescitechjournalpostservice    = new ThescitechjournalpostService();
         $post           = $this->thescitechjournalpostservice->getPostBySlug($slug);
+        echo '<pre>'; print_r($post); die;
         return View('thescitechjournalpost',['post'=> $post, 'advertisementdetails_top' => $advertisementdetails_top, 'sidepaneltabpostdetails' => $sidepaneltabpostdetails, 'sidepaneltabthescitechpostdetails' => $sidepaneltabthescitechpostdetails, 'advertisementdetails_bottom' => $advertisementdetails_bottom, 'advertisementdetails_banner' => $advertisementdetails_banner]);
     }
 

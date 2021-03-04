@@ -3,6 +3,10 @@
 
 @section('title', $post->title)
 
+@section('metakeyword', $post->metakeyword)
+
+@section('metadescription', $post->metadescription)
+
 @section('content')
 
 <div class="row mt-2">

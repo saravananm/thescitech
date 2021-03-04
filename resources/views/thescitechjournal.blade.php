@@ -26,11 +26,12 @@
             </div>
         </div>
         <div class="mt-2" style="color:#53cbf1; font-weight:bold;">{{$selyear}} >> {{$monthname[$selmonth]}}</div>
-        <br />  
+        <br />
+
         <div class="row">
             <img src="{{url('public/storage/images/coverimage/'.$coverimage->image_name) }}"  style="display: block; margin-left: auto; margin-right: auto; width: 60%;border: 2px solid #eaeaea;" > 
         </div>
-
+<a class="read-more"  style="float:right; font-size:18px;" target="_blank" href="{{url('public/storage/images/coverimage/'.$coverimage->file_name) }}">Click here to download the PDF copy of The Scitech Journal {{$monthname[$selmonth]}} {{$selyear}}</a> 
         <div class="row mt-2">
             @foreach($data as $postkey => $postval)
             <div class="title-box mt-2"><span>{{$postkey}}</span></div>
@@ -58,11 +59,11 @@
                     <span class="news-tag" style="background:#{{$tag->background}};color:#{{$tag->color}};margin-left:5px;top:-30px;">{{$tag->name}}</span>
                     @endforeach
                     </div>
-                    <h4><a href="{{url('post/'.$post->slug)}}">{{$post->title}}</a></h4>
+                    <h4><a href="{{url('the-scitech-journal-post/'.$post->slug)}}">{{$post->title}}</a></h4>
                     <div class="list-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{date('F j, Y', strtotime($post->datefor))}}</div>
                     <div class="list-author"> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{$post->author}}</div>
                     <div class="clearfix"></div>
-                    <p><a href="{{url('post/'.$post->slug)}}">{!! $post->short_message !!}</a></p>
+                    <p><a href="{{url('the-scitech-journal-post/'.$post->slug)}}">{!! $post->short_message !!}</a></p>
                 </div>
                 @endif
                 

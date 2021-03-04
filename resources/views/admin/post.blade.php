@@ -210,6 +210,14 @@
             @endif>In-active</option>
           </select>
         </div>
+        <div class="form-group">
+          <label for="message">Meta Keyword:</label>
+          <textarea   class="form-control" name="metakeyword" placeholder="Meta Keyword"  id="metakeyword">@if(isset($edit_data)){{old('message',$edit_data->metakeyword)}}@else{{old('metakeyword')}}@endif</textarea>
+        </div>
+        <div class="form-group">
+          <label for="message">Meta Description:</label>
+          <textarea   class="form-control" name="metadescription" placeholder="Meta Description"  id="metadescription">@if(isset($edit_data)){{old('message',$edit_data->metadescription)}}@else{{old('metadescription')}}@endif</textarea>
+        </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>

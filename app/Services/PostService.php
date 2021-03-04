@@ -94,6 +94,8 @@ class PostService
         $post->status 			= $req->status;
         $post->cover_image 		= $req->cover_image;
         $post->side_panel 		= $req->side_panel;
+        $post->metakeyword 		= $req->metakeyword;
+        $post->metadescription 	= $req->metadescription;
 		$insertedId 			= $post->save();
 		$post->tags()->attach($req->tag);
 		$post->categories()->attach($req->categories);
@@ -123,6 +125,8 @@ class PostService
         $post->cover_image 		= $req->cover_image;
         $post->side_panel 		= $req->side_panel;
         $post->status 			= $req->status;
+        $post->metakeyword 		= $req->metakeyword;
+        $post->metadescription 	= $req->metadescription;
 		$post->save();
 		$post->tags()->detach();
 		$post->tags()->attach($req->tag);

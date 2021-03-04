@@ -84,6 +84,8 @@ class ThescitechjournalpostService
         $post->author 			= $req->author;
         $post->status 			= $req->status;
         $post->side_panel 		= $req->side_panel;
+        $post->metakeyword 		= $req->metakeyword;
+        $post->metadescription 	= $req->metadescription;
 		$insertedId 			= $post->save();
 		$post->tags()->attach($req->tag);
 		$post->categories()->attach($req->categories);
@@ -108,6 +110,8 @@ class ThescitechjournalpostService
         $post->author 			= $req->author;
         $post->status 			= $req->status;
         $post->side_panel 		= $req->side_panel;
+        $post->metakeyword 		= $req->metakeyword;
+        $post->metadescription 	= $req->metadescription;
 		$post->save();
 		$post->tags()->detach();
 		$post->tags()->attach($req->tag);

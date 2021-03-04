@@ -42,6 +42,17 @@
           @endif
         </div>
       </div>
+      <div class="row">
+        <div class="form-group col-sm-4 float-left">
+          <label for="file_name">Coverimage File</label>
+          <input type="file" class="form-control-file" id="file_name" name="file_name">
+        </div>
+        <div class="col-sm-8 float-right">
+          @if(isset($edit_data))
+          <a href= "{{url('public/storage/images/coverimage/'.$edit_data->file_name) }}" target="_balnk">File</a>
+          @endif
+        </div>
+      </div>
       <div class="form-group">
         <label for="status">Status:</label>
           <select class="form-control" id="status" name="status">
@@ -84,6 +95,7 @@
           <th scope="col">#</th>
           <th scope="col">Month-Year</th>
           <th scope="col">Image</th>
+          <th scope="col">File</th>
           <th scope="col">Status</th>
           <th scope="col">Edit</th>
         </tr>
@@ -102,6 +114,9 @@
           </td>
           <td>
             <img src= "{{url('public/storage/images/coverimage/'.$coverimage->image_name) }}" style="width:150px;height:70px" />
+          </td>
+           <td>
+            <a href= "{{url('public/storage/images/coverimage/'.$coverimage->file_name) }}" target="_blank">File</a>
           </td>
           <td><a href="{{url('coverimages/' . $coverimage->id)}}">Edit</a></td>
         </tr>

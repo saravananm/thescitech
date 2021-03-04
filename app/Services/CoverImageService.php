@@ -48,9 +48,16 @@ class CoverImageService
 			$file_path = $req->image_name->hashName();
 			$cover->image_name 	= $file_path;
 		}
+		if($req->hasFile('file_name'))
+		{
+			$req->file_name->store('public/images/coverimage');
+			$coverimage_file_path = $req->file_name->hashName();
+			$cover->file_name 	= $coverimage_file_path;
+		}
         $cover->month 		= $req->month;
         $cover->year 		= $req->year;
         $cover->status 		= $req->status;
+
         $cover->save();
 	}
 
@@ -62,6 +69,12 @@ class CoverImageService
 			$req->image_name->store('public/images/coverimage');
 			$file_path = $req->image_name->hashName();
 			$cover->image_name 	= $file_path;
+		}
+		if($req->hasFile('file_name'))
+		{
+			$req->file_name->store('public/images/coverimage');
+			$coverimage_file_path = $req->file_name->hashName();
+			$cover->file_name 	= $coverimage_file_path;
 		}
         $cover->month 		= $req->month;
         $cover->year 		= $req->year;
